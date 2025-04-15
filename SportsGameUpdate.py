@@ -2,7 +2,10 @@ from openai import OpenAI
 import os
 from dotenv import load_dotenv
 
+# Loads .env for hidden API key
 load_dotenv()
+
+# Access to OpenAI
 client = OpenAI(api_key=os.getenv("OPEN_API_KEY"))
 
 response = client.responses.create(
@@ -10,6 +13,8 @@ response = client.responses.create(
   input =
   [
     {
+      # Instructions for the AI response 
+      
       "role": "system",
       "content": 
       [
@@ -21,6 +26,8 @@ response = client.responses.create(
       ]
     },
     {
+      # Instructions for the AI program and how it runs
+      
       "role": "user",
       "content": 
       [
@@ -61,4 +68,5 @@ response = client.responses.create(
   store = True
 )
 
-        
+# Response
+print(response.choices[0].message.content)
