@@ -1,3 +1,5 @@
-key.env
+#Tells GitHub to ignore the .env file to hid API key
+
+.env
 __pycache__/
 *.pyc
